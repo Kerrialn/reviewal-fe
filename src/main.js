@@ -7,7 +7,7 @@ import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import '@mdi/font/css/materialdesignicons.css'
 
-axios.defaults.baseURL = process.env.BE_URL
+axios.defaults.baseURL = 'https://reviewal.herokuapp.com/api/'
 Vue.config.productionTip = false
 Vue.use(axios)
 Vue.use(Buefy)
