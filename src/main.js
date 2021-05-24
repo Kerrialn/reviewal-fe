@@ -7,7 +7,7 @@ import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import '@mdi/font/css/materialdesignicons.css'
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000/api/';
+axios.defaults.baseURL = process.env.BE_URL
 Vue.config.productionTip = false
 Vue.use(axios)
 Vue.use(Buefy)
