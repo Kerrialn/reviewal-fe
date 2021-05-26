@@ -34,7 +34,11 @@
                 loadRecaptchaScript="true"
               ></vue-recaptcha>
               <div class="has-text-right">
-                <b-button :disabled="isDisabled" class="button is-light">
+                <b-button
+                  :disabled="isDisabled"
+                  native-type="submit"
+                  class="button is-light"
+                >
                   contiune
                 </b-button>
               </div>

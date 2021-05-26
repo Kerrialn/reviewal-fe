@@ -29,8 +29,7 @@
               <div class="has-text-right">
                 <b-button
                   :disabled="isDisabled"
-                  tag="input"
-                  native-type="contiune"
+                  native-type="submit"
                   class="button is-light"
                 >
                   contiune
