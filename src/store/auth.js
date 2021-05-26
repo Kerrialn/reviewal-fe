@@ -29,16 +29,14 @@ export default {
   actions:{
     async login({ dispatch }, credentials){
       store.commit('setLoading', true)
-      return await axios.post('login', credentials).then((response)=>{
-        dispatch('attempt', response.data.token)
-        store.commit('setLoading', false)
-        Toast.open({duration: 5000, message: 'Login successful', type: 'is-success'})
-      })
+       let response = await axios.post('login', credentials)
       .catch((error) =>{
         if (error.response) {
           Toast.open({duration: 5000, message: error.response.data.message, type: "is-danger"});
         }           
       })
+      store.commit('setLoading', false)
+      return dispatch('attempt', response.data.token)
     },
     async attempt({commit, state}, token){
       if(token){
@@ -50,10 +48,8 @@ export default {
       }
 
       try{
-        return await axios.get('/profile').then((response)=>{
-          commit('setUser', response.data)
-        })
-      
+        let response = await axios.get('/profile')
+        commit('setUser', response.data)
       }catch(error){
         if (error.response) {
           Toast.open({duration: 5000,message: error.response.data.message,type: "is-danger"});
