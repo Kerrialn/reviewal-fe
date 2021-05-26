@@ -6,7 +6,8 @@ export default {
   namespaced: true,
   state:{
     user: null,
-    token: null
+    token: null,
+    publicSitKey: process.env.VUE_APP_CAPTCHA_PUBLIC_KEY
   },
   getters:{
     getUser(state){
@@ -17,6 +18,9 @@ export default {
     },
     getStatus(state){
       return state.token
+    },
+    getPublicSitKey(state){
+      return state.publicSitKey
     },
     isAuthenticated(state){
       return state.token && state.user
