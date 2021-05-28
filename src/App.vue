@@ -11,7 +11,7 @@
           <div class="column is-10-mobile is-6-desktop">
             Copyright © {{ year }} reviewal.org
           </div>
-          <div class="column is-10-mobile is-6-desktop has-text-right">
+          <div class="column is-10-mobile is-6-desktop">
             <router-link tag="a" :to="{ name: 'About' }">About</router-link>
             |
             <router-link tag="a" :to="{ name: 'Format' }"
