@@ -2,12 +2,13 @@
   <div>
     <div class="search-wrapper">
       <input
+        autofocus
         class="search-input"
         @keyup.enter="search()"
         v-model="form.premise"
         size="is-large"
         expanded
-        placeholder="house no."
+        placeholder="Property number or name"
       />
 
       <input
@@ -16,7 +17,7 @@
         v-model="form.floor"
         size="is-large"
         expanded
-        placeholder="floor"
+        placeholder="Floor"
       />
 
       <input
@@ -25,7 +26,7 @@
         v-model="form.line_one"
         size="is-large"
         expanded
-        placeholder="street"
+        placeholder="Street address"
       />
 
       <input
@@ -34,7 +35,7 @@
         v-model="form.city"
         size="is-large"
         expanded
-        placeholder="city"
+        placeholder="City"
       />
 
       <input
@@ -43,7 +44,7 @@
         v-model="form.postal_code"
         size="is-large"
         expanded
-        placeholder="postal code"
+        placeholder="Postal code"
       />
     </div>
   </div>
