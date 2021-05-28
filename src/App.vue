@@ -6,26 +6,22 @@
     <router-view class="router-view" />
 
     <footer class="footer">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-10-mobile is-6-desktop">
-            Copyright © {{ year }} reviewal.org
-          </div>
-          <div class="column is-10-mobile is-6-desktop">
-            <router-link tag="a" :to="{ name: 'About' }">About</router-link>
-            |
-            <router-link tag="a" :to="{ name: 'Format' }"
-              >Formating</router-link
-            >
-            |
-            <router-link tag="a" :to="{ name: 'Terms' }"
-              >Privacy policy</router-link
-            >
-            |
-            <router-link tag="a" :to="{ name: 'Terms' }"
-              >Terms of use</router-link
-            >
-          </div>
+      <div class="columns">
+        <div class="column is-10-mobile is-6-desktop">
+          Copyright © {{ year }} reviewal.org
+        </div>
+        <div class="column is-10-mobile is-6-desktop">
+          <router-link tag="a" :to="{ name: 'About' }">About</router-link>
+          |
+          <router-link tag="a" :to="{ name: 'Format' }">Formating</router-link>
+          |
+          <router-link tag="a" :to="{ name: 'Terms' }"
+            >Privacy policy</router-link
+          >
+          |
+          <router-link tag="a" :to="{ name: 'Terms' }"
+            >Terms of use</router-link
+          >
         </div>
       </div>
     </footer>
