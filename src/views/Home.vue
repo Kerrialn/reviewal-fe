@@ -3,86 +3,15 @@
     <div class="columns is-mobile is-centered">
       <div class="column is-10-mobile is-8-desktop">
         <div class="title">Search address</div>
-
-        <b-field class="m-0">
-          <b-input
-            @keyup.enter.native="submit()"
-            v-model="keyword"
-            size="is-large"
-            expanded
-            placeholder="Premise name or number, floor, address line one, city, postal code, country"
-          ></b-input>
-          <p class="control">
-            <b-button
-              class="button is-large is-primary"
-              @click.native="submit()"
-              icon-left="magnify"
-            />
-          </p>
-        </b-field>
-        <router-link class="" :to="{ name: 'Format' }" tag="a"
-          >Follow the required address format</router-link
-        >
+        <search-form />
       </div>
     </div>
 
     <div class="columns is-mobile is-centered">
-      <div class="column is-12-mobile is-12-desktop">
-        <nav class="level is-mobile" v-if="response.search">
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="has-text-weight-bold">
-                <b-tooltip
-                  label="Address name or number"
-                  type="is-primary is-light"
-                  position="is-top"
-                  animated="false"
-                >
-                  Premise
-                </b-tooltip>
-              </p>
-              <p>{{ response.search.premise || "--" }}</p>
-            </div>
-          </div>
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="has-text-weight-bold">Floor</p>
-              <p>{{ response.search.floor || "--" }}</p>
-            </div>
-          </div>
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="has-text-weight-bold">Line one</p>
-              <p>{{ response.search.lineOne || "--" }}</p>
-            </div>
-          </div>
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="has-text-weight-bold">City</p>
-              <p>{{ response.search.city || "--" }}</p>
-            </div>
-          </div>
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="has-text-weight-bold">Postal code</p>
-              <p>{{ response.search.postalCode || "--" }}</p>
-            </div>
-          </div>
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="has-text-weight-bold">Country</p>
-              <p>{{ response.search.countryCode || "--" }}</p>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-
-    <div class="columns is-mobile is-centered">
-      <div class="column is-10-mobile is-8-desktop ">
+      <div class="column is-10-mobile is-8-desktop margin-bottom-5">
         <div
           class="card margin-bottom-3"
-          v-for="address in response.addresses"
+          v-for="address in addresses"
           :key="address.id"
         >
           <router-link
@@ -113,6 +42,12 @@
               </nav>
             </div>
           </router-link>
+        </div>
+        <div
+          v-if="addresses.length === 0 && search"
+          class="title has-text-centered muted"
+        >
+          No addresses found
         </div>
       </div>
     </div>
@@ -152,12 +87,13 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex"
+import { mapGetters } from "vuex"
+import SearchForm from "../components/SearchForm.vue"
 export default {
+  components: { SearchForm },
   name: "Home",
   data() {
     return {
-      keyword: "",
       showWelcomeMessage: true,
     }
   },
@@ -166,24 +102,21 @@ export default {
       user: "auth/getUser",
       isAuthenticated: "auth/isAuthenticated",
       isLoading: "getLoading",
-      response: "address/getAddresses",
+      addresses: "address/getAddresses",
+      search: "address/getSearch",
     }),
-  },
-  mounted() {},
-  methods: {
-    ...mapActions({
-      search: "address/search",
-    }),
-    async submit() {
-      if (this.keyword.trim()) {
-        await this.search(this.keyword)
-      }
-    },
   },
 }
 </script>
 
 <style scoped>
+.margin-bottom-5 {
+  margin-bottom: 50px;
+}
+
+.muted {
+  color: gray;
+}
 .between {
   display: flex;
   justify-content: space-between;
