@@ -87,7 +87,6 @@ export default {
 .search-input {
   text-align: center;
   min-width: 100px;
-  max-width: 200px;
   font-size: 24px;
   border-radius: 3px;
   padding: 10px;
@@ -106,14 +105,13 @@ export default {
 
 @media (max-width: 800px) {
   .search-wrapper {
-    flex-flow: column;
-    flex-wrap: wrap;
-    flex: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
   }
   .search-input {
+    align-self: 100%;
     width: 100%;
-    display: block;
-    flex-grow: 4;
   }
 }
 </style>
