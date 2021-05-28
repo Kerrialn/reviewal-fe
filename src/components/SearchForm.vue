@@ -7,7 +7,7 @@
         v-model="form.premise"
         size="is-large"
         expanded
-        placeholder="house name/number"
+        placeholder="house no."
       />
 
       <input
