@@ -90,7 +90,7 @@ export default {
   min-width: 100px;
   font-size: 24px;
   border-radius: 3px;
-  padding: 10px;
+  padding: 20px;
   border: 0px solid transparent;
   box-shadow: none;
   border-color: transparent;
