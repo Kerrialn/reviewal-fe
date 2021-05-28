@@ -7,7 +7,7 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="columns is-mobile is-centered">
+        <div class="columns">
           <div class="column is-10-mobile is-6-desktop">
             Copyright © {{ year }} reviewal.org
           </div>
