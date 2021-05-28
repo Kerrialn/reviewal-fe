@@ -4,8 +4,6 @@
       <search-form />
     </b-field>
 
-    {{ createFormAddress }}
-
     <div class="columns is-centered mt-3">
       <div class="column is-12 scroll-select">
         <div v-if="addresses">
