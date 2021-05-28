@@ -25,7 +25,7 @@
         v-model="form.line_one"
         size="is-large"
         expanded
-        placeholder="line one"
+        placeholder="street"
       />
 
       <input
