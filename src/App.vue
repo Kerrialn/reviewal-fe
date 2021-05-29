@@ -37,19 +37,10 @@ export default {
   computed: {
     ...mapGetters({
       isLoading: "getLoading",
-      message: "getMessage",
     }),
     year() {
       return new Date().getFullYear()
     },
-  },
-  mounted() {
-    if (this.message.content) {
-      this.$buefy.toast.open({
-        message: this.message.content,
-        type: this.message.type || "",
-      })
-    }
   },
 }
 </script>
