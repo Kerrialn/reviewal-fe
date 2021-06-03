@@ -6,6 +6,7 @@ import Create from '@/views/Create'
 import Login from '@/views/Login'
 import Register from '@/views/Register'
 import Dashboard from '@/views/Dashboard'
+import Contract from '@/views/Contract'
 import store from '@/store/index'
 import { ToastProgrammatic as Toast } from 'buefy'
 
@@ -94,6 +95,11 @@ const routes = [
     path: '/format',
     name: 'Format',
     component: () => import(/* webpackChunkName: "terms" */'@/views/Format')
+  },
+  {
+    path: '/contract',
+    name: 'Contract',
+    component: Contract
   },
 ]
 

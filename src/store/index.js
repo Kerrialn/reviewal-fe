@@ -4,6 +4,7 @@ import auth from './auth'
 import reviews from './reviews'
 import address from './address'
 import createForm from './createForm'
+import contract from './contract'
 
 Vue.use(Vuex)
 
@@ -29,6 +30,7 @@ export default new Vuex.Store({
     auth,
     reviews,
     address,
-    createForm
+    createForm,
+    contract
   }
 })

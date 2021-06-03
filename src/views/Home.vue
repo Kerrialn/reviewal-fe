@@ -2,7 +2,8 @@
   <div class="container">
     <div class="columns is-mobile is-centered">
       <div class="column is-10-mobile is-8-desktop">
-        <div class="title">Search address</div>
+        <div class="title">Long Term rental reviews</div>
+        <div class="subtitle">Search address</div>
         <search-form />
       </div>
     </div>
