@@ -2,8 +2,25 @@
   <div class="container">
     <div class="columns is-mobile is-centered">
       <div class="column is-10-mobile is-8-desktop">
-        <div class="title">Long Term rental reviews</div>
-        <div class="subtitle">Search address</div>
+        <div class="title has-text-primary">Long Term rental reviews</div>
+        <hr />
+        <p>
+          Search for an address and find the previous tenants experience of the
+          landlord, premises, surrounding area, transport access and noise
+          pollution.
+        </p>
+        <div class="has-text-centered margin">
+          <b-button
+            tag="router-link"
+            class="btn"
+            type="is-primary is-light"
+            :to="{ name: 'Register' }"
+          >
+            Leave review</b-button
+          >
+        </div>
+
+        <div class="subtitle is-4">Search address</div>
         <search-form />
       </div>
     </div>
@@ -49,38 +66,6 @@
           class="title has-text-centered muted"
         >
           No addresses found
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-mobile is-centered">
-      <div class="column is-10-mobile is-8-desktop">
-        <div
-          class="box has-background-primary has-text-white"
-          v-if="!isAuthenticated && showWelcomeMessage"
-        >
-          <div class="title has-text-white between">
-            <div>
-              A review for full access
-            </div>
-            <div>
-              <b-icon
-                @click.native="showWelcomeMessage = !showWelcomeMessage"
-                icon="close"
-              />
-            </div>
-          </div>
-          <div class="subtitle has-text-white">
-            Leave one review and gain access to all reviews, free. no catch.
-          </div>
-          <hr />
-          <div class="subtitle is-5 has-text-white">
-            How it works?
-          </div>
-          <p class="has-text-white">
-            Lookup an address and find the tenants experiences of the landlord,
-            premises, surrounding area, transport access and noise pollution.
-          </p>
         </div>
       </div>
     </div>
@@ -140,5 +125,8 @@ export default {
   display: flex;
   align-items: center;
   line-height: 0.8;
+}
+.margin {
+  margin: 30px 0;
 }
 </style>
