@@ -2,9 +2,9 @@
   <div class="container">
     <div class="columns is-centered is-mobile">
       <div class="column  is-4-desktop is-10-mobile">
-        <form @submit.prevent="submit">
-          <div class="card">
-            <div class="card-content">
+        <div class="card">
+          <div class="card-content">
+            <form @submit.prevent="submit">
               <div class="is-size-4">Login</div>
               <b-field>
                 <b-input
@@ -35,12 +35,12 @@
                   contiune
                 </b-button>
               </div>
-            </div>
-            <footer class="card-footer jc-c">
-              <v-facebook-login app-id="486937362414266"></v-facebook-login>
-            </footer>
+            </form>
           </div>
-        </form>
+          <footer class="card-footer jc-c">
+            <v-facebook-login app-id="486937362414266"></v-facebook-login>
+          </footer>
+        </div>
       </div>
     </div>
   </div>
