@@ -5,7 +5,7 @@
         <div class="title has-text-primary">Long Term rental reviews</div>
         <hr />
         <p>
-          Search for an address and find the previous tenants experience of the
+          Search for an address and find the anonymous experience of previous tenants of the
           landlord, premises, surrounding area, transport access and noise
           pollution.
         </p>
