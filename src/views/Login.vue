@@ -36,6 +36,9 @@
                 </b-button>
               </div>
             </div>
+            <footer class="card-footer jc-c">
+              <v-facebook-login app-id="486937362414266"></v-facebook-login>
+            </footer>
           </div>
         </form>
       </div>
@@ -44,12 +47,14 @@
 </template>
 
 <script>
+import VFacebookLogin from "vue-facebook-login-component"
 import VueRecaptcha from "vue-recaptcha"
 import { mapActions, mapGetters } from "vuex"
 export default {
   name: "Login",
   components: {
     VueRecaptcha,
+    VFacebookLogin,
   },
   data() {
     return {
@@ -86,4 +91,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.jc-c {
+  justify-content: center;
+}
+</style>
