@@ -75,7 +75,7 @@ export default {
       key: "auth/getPublicSitKey",
     }),
     facebookLoginUrl() {
-      return "https://reviewal.herokuapp.com/api/auth/facebook"
+      return "http://reviewal.herokuapp.com/api/auth/facebook"
     },
   },
   methods: {
