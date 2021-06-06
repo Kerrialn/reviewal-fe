@@ -75,7 +75,7 @@ export default {
       key: "auth/getPublicSitKey",
     }),
     facebookLoginUrl() {
-      return process.env.FACEBOOK_LOGIN_URL
+      return process.env.VUE_APP_FACEBOOK_LOGIN_URL
     },
   },
   methods: {
