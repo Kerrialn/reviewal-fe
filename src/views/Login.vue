@@ -38,7 +38,15 @@
             </form>
           </div>
           <footer class="card-footer jc-c">
-            <v-facebook-login app-id="486937362414266"></v-facebook-login>
+            <b-button
+              class="facebook-btn"
+              tag="a"
+              target="_blank"
+              href="http://localhost:8000/api/auth/facebook"
+              icon-left="facebook"
+            >
+              Contiune with facebook
+            </b-button>
           </footer>
         </div>
       </div>
@@ -47,14 +55,13 @@
 </template>
 
 <script>
-import VFacebookLogin from "vue-facebook-login-component"
+import axios from "axios"
 import VueRecaptcha from "vue-recaptcha"
 import { mapActions, mapGetters } from "vuex"
 export default {
   name: "Login",
   components: {
     VueRecaptcha,
-    VFacebookLogin,
   },
   data() {
     return {
@@ -75,6 +82,11 @@ export default {
     onVerify() {
       this.isDisabled = false
     },
+    async socialLogin() {
+      axios.get("/auth/facebook").then((response) => {
+        console.log(response.data)
+      })
+    },
     async submit() {
       if (this.email || this.password) {
         await this.login({
@@ -94,5 +106,14 @@ export default {
 <style scoped>
 .jc-c {
   justify-content: center;
+}
+.facebook-btn {
+  border: 0;
+  background-color: #3b5998;
+  color: #ffffff;
+}
+.facebook-btn:hover {
+  background-color: #4267b2;
+  color: #ffffff;
 }
 </style>
