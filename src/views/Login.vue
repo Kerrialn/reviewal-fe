@@ -75,7 +75,7 @@ export default {
       key: "auth/getPublicSitKey",
     }),
     facebookLoginUrl() {
-      return process.env.VUE_APP_FACEBOOK_LOGIN_URL
+      return "https://reviewal.herokuapp.com/api/auth/facebook"
     },
   },
   methods: {
