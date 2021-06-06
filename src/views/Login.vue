@@ -42,7 +42,7 @@
               class="facebook-btn"
               tag="a"
               target="_blank"
-              href="http://localhost:8000/api/auth/facebook"
+              :href="facebookLoginUrl"
               icon-left="facebook"
             >
               Contiune with facebook
@@ -74,6 +74,9 @@ export default {
     ...mapGetters({
       key: "auth/getPublicSitKey",
     }),
+    facebookLoginUrl() {
+      return process.env.FACEBOOK_LOGIN_URL
+    },
   },
   methods: {
     ...mapActions({
