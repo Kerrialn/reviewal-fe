@@ -42,7 +42,7 @@
               class="facebook-btn"
               tag="a"
               target="_blank"
-              :href="facebookLoginUrl"
+              @click="AuthProvider('facebook')"
               icon-left="facebook"
             >
               Contiune with facebook
@@ -55,7 +55,6 @@
 </template>
 
 <script>
-import axios from "axios"
 import VueRecaptcha from "vue-recaptcha"
 import { mapActions, mapGetters } from "vuex"
 export default {
@@ -74,9 +73,6 @@ export default {
     ...mapGetters({
       key: "auth/getPublicSitKey",
     }),
-    facebookLoginUrl() {
-      return "http://reviewal.herokuapp.com/api/auth/facebook"
-    },
   },
   methods: {
     ...mapActions({
@@ -85,10 +81,28 @@ export default {
     onVerify() {
       this.isDisabled = false
     },
-    async socialLogin() {
-      axios.get("/auth/facebook").then((response) => {
-        console.log(response.data)
-      })
+    AuthProvider(provider) {
+      var self = this
+
+      this.$auth
+        .authenticate(provider)
+        .then((response) => {
+          self.SocialLogin(provider, response)
+        })
+        .catch((err) => {
+          console.log({ err: err })
+        })
+    },
+
+    SocialLogin(provider, response) {
+      this.$http
+        .post("/sociallogin/" + provider, response)
+        .then((response) => {
+          console.log(response.data)
+        })
+        .catch((err) => {
+          console.log({ err: err })
+        })
     },
     async submit() {
       if (this.email || this.password) {
