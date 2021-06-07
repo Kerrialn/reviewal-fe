@@ -19,7 +19,7 @@ Vue.use(VueSocialauth, {
   providers: {
     facebook: {
       clientId: '486937362414266',
-      redirectUri: '/auth/facebook/callback'
+      redirectUri: 'https://reviewal.org/auth/facebook/callback'
     }
   }
 })
